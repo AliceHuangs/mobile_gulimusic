@@ -1,0 +1,367 @@
+@charset "utf-8";
+/*公共样式开始*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  /*禁止系统（浏览器）滚动条*/
+  height: 100%;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+ul {
+  list-style: none;
+}
+.clear-float::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+input {
+  outline: none;
+}
+::-webkit-input-placeholder {
+  color: #000;
+}
+/*公共样式结束*/
+.wrap {
+  background-color: #eee;
+  border: 1px solid #000000;
+  height: 100%;
+  overflow: hidden;
+}
+/*头部样式开始*/
+.header {
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 1000;
+}
+.header .header-top {
+  width: 100%;
+  height: 1.35rem;
+}
+.header .header-top h1 {
+  background: url("../img/logo.png") no-repeat 0.17rem 0.26rem;
+  /* background-position:  0.17rem 0.26rem; */
+  text-indent: -9999px;
+  background-size: 2.4rem 0.88rem;
+  padding: 0.26rem 0.17rem 0.21rem;
+  float: left;
+  width: 2.4rem;
+  height: 0.88rem;
+  box-sizing: content-box;
+}
+.header .header-top .active_menu {
+  display: block;
+  width: 1.29rem;
+  height: 1.35rem;
+  background: url("../img/menuBtn.png") no-repeat center 0.16rem;
+  background-size: 0.82rem 2.33rem;
+  float: left;
+}
+.header .header-top .btns {
+  float: right;
+  padding-top: 0.21rem;
+}
+.header .header-top .btns a {
+  width: 1.11rem;
+  height: 0.78rem;
+  background-color: #690;
+  color: #ccc;
+  margin-right: 0.15rem;
+  font-size: 0.42rem;
+  text-align: center;
+  line-height: 0.78rem;
+  border-radius: 0.08rem;
+  float: left;
+}
+.header .header-top .btns a:nth-child(1) {
+  width: 1.3rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  color: #fff;
+  margin: 0.03rem 0.3rem 0 0;
+  font-weight: bold;
+  border-radius: 0.1rem;
+}
+.header .search {
+  height: 1.03rem;
+  margin: 0.16rem;
+  /*让父元素search 成为弹性容器*/
+  display: flex;
+  /*让子元素在弹性容器的父元素下 空白自动填满子元素之间 。  行的属性*/
+  justify-content: space-between;
+}
+.header .search [type=text] {
+  width: 8.29rem;
+  height: 1.03rem;
+  background-color: #999999;
+  padding: 0.05rem 0.1rem;
+  border: 1px solid #5a5a5a;
+  font-size: 0.41rem;
+  color: #333333;
+  -webkit-appearance: none !important;
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+.header .search [type=text]:focus {
+  background-color: white;
+}
+.header .search [type=submit] {
+  width: 2.03rem;
+  height: 1.03rem;
+  border: none;
+  background-color: #414040;
+  color: #fff;
+  font-size: 0.41rem;
+  border-radius: 0.15rem;
+}
+.header .menu {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 1.35rem;
+  padding: 0.1rem 0;
+  border-top: 1px solid #6a6a6a;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.header .menu li {
+  float: left;
+  width: 25%;
+  height: 1.35rem;
+  font-size: 0.54rem;
+  line-height: 1.35rem;
+  text-align: center;
+}
+.header .menu li a {
+  color: white;
+  display: block;
+}
+/*头部样式结束*/
+/*内容区样式开始*/
+.content {
+  margin-top: 2.7rem;
+  height: 2000px;
+  transform: translateY(0);
+  position: relative;
+  /*内容区顶部滚动导航开始*/
+  /*内容区顶部滚动导航结束*/
+  /*全屏滑动广告轮播图开始 (方式二：指示器的切换样式)*/
+  /*全屏滑动广告轮播图开始 (方式二：指示器的切换样式)*/
+  /*tab页面区域开始*/
+  /*tab页面区域结束*/
+}
+.content .nav-wrap {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.content .nav-wrap .nav {
+  height: 1.77rem;
+  padding: 0.31rem 0 0.14rem;
+  /*导航ul 内的子元素li 不换行 */
+  white-space: nowrap;
+  /*不换行*/
+  float: left;
+  /*使得父元素ul.nav脱离文档流 。让元素脱离文档流之后，他的宽度如果是自动的，就是被子元素撑起来的*/
+}
+.content .nav-wrap .nav li {
+  display: inline-block;
+  height: 1.29rem;
+  padding: 0 0.38rem;
+  font-size: 0.62rem;
+}
+.content .nav-wrap .nav li a {
+  display: block;
+  height: 100%;
+  line-height: 1.29rem;
+  color: #020202;
+}
+.content .nav-wrap .nav li.active {
+  background-color: #690;
+}
+.content .nav-wrap .nav li.active a {
+  color: white;
+}
+.content .spider_wrap {
+  width: 100%;
+  position: relative;
+}
+.content .spider_wrap .spiders {
+  width: 700%;
+  /*一开始默认显示第一张图片1.jpg  ，这里使用相对定位向左移动一个图片宽度的距离，显示第一张图片*/
+  position: relative;
+  left: -100%;
+  transform: translateX(0);
+  /*给定一个开始默认值，后面用于给js区获取一开始的transform属性 */
+}
+.content .spider_wrap .spiders .spider {
+  width: calc(100% / 7);
+  float: left;
+}
+.content .spider_wrap .indicator {
+  /*要让他们这些子元素span在他们的父元素 .indicator中水平居中，在父元素中*/
+  text-align: center;
+  /*让 .indicator在他的父元素 .spider_wrap中绝对定位 之后， .indicator脱离文档流，此时他的宽度不在和他父元素 .spider_wrap一样宽，而是由他的子元素span们的宽度撑起来。因此此时的他的儿子元素span在他里面就没有居中之说， text-align: center;也就不起作用。解决：只需要给.indicator他一个width即可设置为和他父元素一样宽即可*/
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  font-size: 0;
+  /*字体大小为0 空格也就是为0 ，这样不影响i元素的移动的时候位置的准确性*/
+}
+.content .spider_wrap .indicator span,
+.content .spider_wrap .indicator i {
+  display: inline-block;
+  /*每个子元素排在一排上，这就不用使用浮动让元素排在一排上*/
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background-color: yellow;
+  border-radius: 50%;
+}
+.content .spider_wrap .indicator i {
+  transform: translateX(0);
+  /**/
+  background-color: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-left: 0px;
+  /*因为绝对定位的元素的margin起作用，前面有个margin: 5px;，所以这里要把margin-left: 0px; */
+}
+.content .tab_wrap {
+  width: 10.46rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.content .tab_wrap .tab_head {
+  width: 100%;
+  display: flex;
+  /*给父元素添加属性 display: flex;  使得父元素成为弹性盒子，让他的子元素在父元素内弹性布局，*/
+  justify-content: space-between;
+  /*元素之间用空白撑开*/
+  height: 1.35rem;
+  line-height: 1.35rem;
+}
+.content .tab_wrap .tab_head .more {
+  color: #000;
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+.content .tab_wrap .tab_nav {
+  position: relative;
+  height: 1.05rem;
+  color: #6b6b6b;
+  font-size: 0;
+  /*.tab_nav内无空白间隔*/
+  /*      input:nth-of-type(1):checked ~ span{
+        transform:translateX(0);
+      }
+      input:nth-of-type(2):checked ~ span{
+        transform:translateX(1.2rem);
+      }*/
+}
+.content .tab_wrap .tab_nav input {
+  width: 0;
+  height: 0;
+}
+.content .tab_wrap .tab_nav input:checked + label {
+  color: black;
+  font-weight: bold;
+}
+.content .tab_wrap .tab_nav input:nth-of-type(1):checked ~ span {
+  transform: translateX(0rem);
+}
+.content .tab_wrap .tab_nav input:nth-of-type(2):checked ~ span {
+  transform: translateX(1.2rem);
+}
+.content .tab_wrap .tab_nav input:nth-of-type(3):checked ~ span {
+  transform: translateX(2.4rem);
+}
+.content .tab_wrap .tab_nav input:nth-of-type(4):checked ~ span {
+  transform: translateX(3.6rem);
+}
+.content .tab_wrap .tab_nav input:nth-of-type(5):checked ~ span {
+  transform: translateX(4.8rem);
+}
+.content .tab_wrap .tab_nav input:nth-of-type(6):checked ~ span {
+  transform: translateX(6rem);
+}
+.content .tab_wrap .tab_nav label {
+  display: inline-block;
+  width: 1.2rem;
+  font-size: 0.5rem;
+  text-align: center;
+}
+.content .tab_wrap .tab_nav .small_box {
+  display: block;
+  width: 1.2rem;
+  height: 0.09rem;
+  background-color: #6f900d;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  transition: transform 300ms;
+}
+.content .tab_wrap .tab_content {
+  width: 300%;
+  margin-left: -100%;
+  /*默认显示中间内容区的内容.middle内容*/
+  transform: translateX(0);
+  /*给定初始值，为使用tx()方法做准备*/
+}
+.content .tab_wrap .tab_content .left,
+.content .tab_wrap .tab_content .right {
+  float: left;
+  width: calc(100%/3);
+  height: 100%;
+}
+.content .tab_wrap .tab_content .left img,
+.content .tab_wrap .tab_content .right img {
+  margin: 0 auto;
+  /*让背景图片水平居中*/
+}
+.content .tab_wrap .tab_content .middle {
+  float: left;
+  width: calc(100%/3);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.content .tab_wrap .tab_content .middle .item {
+  width: 5.06rem;
+  margin: 0.08rem;
+  padding: 0.05rem;
+  font-size: 0.4rem;
+  background-color: #efefef;
+  color: #000;
+}
+.content .tab_wrap .tab_content .middle .item p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content .tab_wrap .tab_content .middle .item div > span {
+  background: url("../img/ice.png") no-repeat;
+  padding-left: 0.6rem;
+  margin-right: 0.3rem;
+}
+.content .tab_wrap .tab_content .middle .item div > span:first-child {
+  background-position-y: 0.1rem;
+}
+.content .tab_wrap .tab_content .middle .item div > span:last-child {
+  background-position-y: -0.5rem;
+}
+/*内容区样式结束*/
